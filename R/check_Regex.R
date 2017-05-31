@@ -19,3 +19,15 @@ check_regex <- function(makeRex, dfeng_clean, mk = "maruti", nc = 11){
   return(out$match_pct)
 
 }
+
+
+
+
+find_Fails <- function(makeRex, dfeng_clean, mk = "maruti", nc = 11){
+  dfeng_clean %>%
+    filter(InsurerMakeName == mk, nchar(EngineNumber) == nc) %>%
+    mutate(k = re_matches(EngineNumber, makeRex)) %>%
+    filter( k == FALSE) %>%
+    as.data.frame() %>%
+    return()
+}
