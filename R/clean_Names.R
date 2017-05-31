@@ -1,0 +1,43 @@
+Clean_names <- function(dfeng){
+
+  dfeng$InsurerMakeName[grep("hyundai", dfeng$InsurerMakeName)] <- "hyundai"
+  dfeng$InsurerMakeName[grep("suzuki", dfeng$InsurerMakeName)] <- "mrt_suzuki"
+  dfeng$InsurerMakeName[grep("maruti", dfeng$InsurerMakeName)] <- "maruti"
+  dfeng$InsurerMakeName[grep("honda", dfeng$InsurerMakeName)] <- "honda"
+  dfeng$InsurerMakeName[grep("nissan", dfeng$InsurerMakeName)] <- "nissan"
+  dfeng$InsurerMakeName[grep("chevrolet", dfeng$InsurerMakeName)] <- "chevrolet"
+  dfeng$InsurerMakeName[grep("fiat", dfeng$InsurerMakeName)] <- "fiat"
+  dfeng$InsurerMakeName[grep("ford", dfeng$InsurerMakeName)] <- "ford"
+  dfeng$InsurerMakeName[grep("kirloskar", dfeng$InsurerMakeName)] <- "tyt_kirloskar"
+  dfeng$InsurerMakeName[grep("toyota", dfeng$InsurerMakeName)] <- "toyota"
+  dfeng$InsurerMakeName[grep("ssangyong", dfeng$InsurerMakeName)] <- "ssangyong"
+  dfeng$InsurerMakeName[grep("mahindra renault", dfeng$InsurerMakeName)] <- "mahi_rnlt"
+  dfeng$InsurerMakeName[grep("mahindra sangyong", dfeng$InsurerMakeName)] <- "mahi_sy"
+  dfeng$InsurerMakeName[grep("mahindra", dfeng$InsurerMakeName)] <- "mahindra"
+  dfeng$InsurerMakeName[grep("skoda", dfeng$InsurerMakeName)] <- "skoda"
+  dfeng$InsurerMakeName[grep("volkswag(on|en)", dfeng$InsurerMakeName)] <- "volkswagen"
+  dfeng$InsurerMakeName[grep("tata", dfeng$InsurerMakeName)] <- "tata"
+  dfeng$InsurerMakeName[grep("renault", dfeng$InsurerMakeName)] <- "renault"
+  dfeng$InsurerMakeName[grep("datsun", dfeng$InsurerMakeName)] <- "datsun"
+  dfeng$InsurerMakeName[grep("mercedes", dfeng$InsurerMakeName)] <- "mercedes"
+  dfeng$InsurerMakeName[grep("audi", dfeng$InsurerMakeName)] <- "audi"
+  dfeng$InsurerMakeName[grep("bmw", dfeng$InsurerMakeName)] <- "bmw"
+  dfeng$InsurerMakeName[grep("mitsubishi", dfeng$InsurerMakeName)] <- "mitsubishi"
+  dfeng$InsurerMakeName[grep("reva", dfeng$InsurerMakeName)] <- "mahindra"
+  dfeng$InsurerMakeName[grep("opel", dfeng$InsurerMakeName)] <- "opel"
+  dfeng$InsurerMakeName[grep("land", dfeng$InsurerMakeName)] <- "land rover"
+  dfeng$InsurerMakeName[grep("volvo", dfeng$InsurerMakeName)] <- "volvo"
+  dfeng$InsurerMakeName[grep("jaguar", dfeng$InsurerMakeName)] <- "jaguar"
+  dfeng$InsurerMakeName[grep("force", dfeng$InsurerMakeName)] <- "force"
+  dfeng$InsurerMakeName[grep("rolls", dfeng$InsurerMakeName)] <- "rolls royce"
+  dfeng$InsurerMakeName[grep("general", dfeng$InsurerMakeName)] <- "general motors"
+  dfeng$InsurerMakeName[grep("hindu", dfeng$InsurerMakeName)] <- "hindustan motors"
+  dfeng$InsurerMakeName[grep("porsche", dfeng$InsurerMakeName)] <- "porsche"
+  dfeng$InsurerMakeName[grep("daewoo", dfeng$InsurerMakeName)] <- "daewoo"
+  dfeng$InsurerMakeName[grep("mini", dfeng$InsurerMakeName)] <- "mini"
+  dfeng$InsurerMakeName[grep("premier", dfeng$InsurerMakeName)] <- "premier"
+
+  return(dfeng)
+}
+
+
