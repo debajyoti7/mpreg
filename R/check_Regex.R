@@ -23,6 +23,17 @@ check_regex <- function(makeRex, dfeng_clean, mk = "maruti", nc = 11){
 
 
 
+#' Find failing cases
+#'
+#' @param makeRex regex to test
+#' @param dfeng_clean dataset, specific format
+#' @param mk make to test against
+#' @param nc number of characters to test against
+#'
+#' @return rows of dataset that fail to match the regex
+#' @export find_Fails
+#'
+#' @examples
 find_Fails <- function(makeRex, dfeng_clean, mk = "maruti", nc = 11){
   dfeng_clean %>%
     filter(InsurerMakeName == mk, nchar(EngineNumber) == nc) %>%

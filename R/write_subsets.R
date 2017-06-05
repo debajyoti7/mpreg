@@ -13,6 +13,11 @@ motorBookings %>%
   write.csv("data/output/mpsubset_cleanMakeNames.csv",row.names = FALSE)
 
 
+motorBookings %>%
+  dplyr::select(SupplierName) %>%
+  unique()
+
+
 df %>%
   mutate(InsurerMakeName = Clean_String(InsurerMakeName))%>%
   Clean_names() %>%
