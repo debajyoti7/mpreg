@@ -292,3 +292,24 @@ hyundai_c17 <- rex(
 
 
 
+###Ford 17
+
+ford_c17 <- rex(
+"M",
+
+n_times(alpha,5) %or%
+group(n_times(alpha,4), digit) %or%
+group(n_times(alpha,2), digit, n_times(alpha,2)),
+
+n_times(alpha,4) %or%
+group(n_times(alpha,3), digit) %or%
+group(n_times(alpha,2), digit, alpha),
+
+n_times(alpha,2) %or%
+group(digit,alpha),
+
+n_times(digit, 5) %or%
+group(alpha, n_times(digit, 4))
+
+)
+
