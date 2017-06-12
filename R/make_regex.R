@@ -251,9 +251,11 @@ tata_e17 <- rex(
 maruti_c17 <- rex(
   "MA3",
   group(n_times(alpha, 4), digit) %or%
-  group(n_times(alpha, 3), n_times(digit, 2)),
-  alpha,
-  n_times(digit, 2),
+  group(n_times(alpha, 3), n_times(digit, 2)) %or%
+  n_times(alpha, 5),
+  group(alpha,n_times(digit, 2)) %or%
+  n_times(digit, 3) %or%
+  n_times(alpha, 3),
   group(alpha, n_times(digit, 5)) %or%
   n_times(digit, 6)
 )
