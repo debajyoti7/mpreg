@@ -245,6 +245,22 @@ tata_e17 <- rex(
 
 ###Chasis
 
+
+#maruti 17
+
+maruti_c17 <- rex(
+  "MA3",
+  group(n_times(alpha, 4), digit) %or%
+  group(n_times(alpha, 3), n_times(digit, 2)),
+  alpha,
+  n_times(digit, 2),
+  group(alpha, n_times(digit, 5)) %or%
+  n_times(digit, 6)
+)
+
+
+#honda 17
+
 honda_c17 <- rex(
 
   start,
@@ -254,10 +270,23 @@ honda_c17 <- rex(
 
   between(digit,2,3),
 
-  n_times(alpha, 3),
+  between(alnum, 3, 4),
 
   between(digit, 6,7),
 
   end
 
 )
+
+
+##hyundai 17
+
+hyundai_c17 <- rex(
+  n_times(alpha, 4),
+  group(alpha,n_times(digit, 2)) %or%  n_times(digit, 3),
+  n_times(alnum, 4), #potentially alnum
+  n_times(digit, 6)
+)
+
+
+

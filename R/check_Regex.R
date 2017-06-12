@@ -42,3 +42,54 @@ find_Fails <- function(makeRex, dfeng_clean, mk = "maruti", nc = 11){
     as.data.frame() %>%
     return()
 }
+
+
+
+
+
+
+
+#' Check Chassis regex
+#'
+#' @param makeRex
+#' @param dfchassis_clean
+#' @param mk
+#' @param nc
+#'
+#' @return
+#' @export
+#'
+#' @examples
+check_regex_chassis <- function(makeRex, dfchassis_clean, mk = "maruti", nc = 11){
+  out <- dfchassis_clean %>%
+    filter(InsurerMakeName == mk, nchar(ChasisNumber) == nc) %>%
+    mutate(k = re_matches(ChasisNumber, makeRex)) %>%
+    group_by(InsurerMakeName) %>%
+    summarise(match_pct = sum(k)*100/length(k))
+
+  return(out$match_pct)
+
+}
+
+
+
+
+#' Title
+#'
+#' @param makeRex
+#' @param dfchassis_clean
+#' @param mk
+#' @param nc
+#'
+#' @return
+#' @export
+#'
+#' @examples
+find_Fails_chassis <- function(makeRex, dfchassis_clean, mk = "maruti", nc = 11){
+  dfchassis_clean %>%
+    filter(InsurerMakeName == mk, nchar(ChasisNumber) == nc) %>%
+    mutate(k = re_matches(ChasisNumber, makeRex)) %>%
+    filter( k == FALSE) %>%
+    as.data.frame() %>%
+    return()
+}

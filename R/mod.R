@@ -19,7 +19,7 @@ dfeng <- df %>%
   select(InsurerMakeName, EngineNumber)
 
 ###for chasis
-dfchasis <- df %>%
+dfchassis <- df %>%
   select(InsurerMakeName, MakeName
          , InsurerModelName, ModelName
          , ChasisNumber)
@@ -58,6 +58,11 @@ dfeng_clean <- dfeng %>%
   mutate(InsurerMakeName = Clean_String(InsurerMakeName))%>%
   Clean_names()
 
+
+dfchassis_clean <- dfchassis %>%
+  mutate(InsurerMakeName = Clean_String(InsurerMakeName)) %>%
+  Clean_names()
+
 dfeng_clean %>%
   select(InsurerMakeName) %>%
   unique()%>%
@@ -69,4 +74,5 @@ dfeng_clean %>%
   mutate(k = n_distinct(nc)) %>%
   select(k) %>%
   unique()
+
 
