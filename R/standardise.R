@@ -50,6 +50,8 @@ reg_to_norm <- function(makeRex = maruti11){
 
   out <- convert(makeRex, b = b1)
 
+  gsub("\\]\\]","\\]", gsub("\\[\\[","\\[", out))
+
   return(out)
 
 }
